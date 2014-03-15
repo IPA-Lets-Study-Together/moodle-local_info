@@ -40,7 +40,7 @@ try {
 
 	print_r($result02);
 
-	$subject = $result02;
+	$subject = serialize($result02); //array to string conversion??
 	$pattern = '\bimg\b\i';
 	if (preg_match($pattern, $subject)) {
 		echo "img was found";
@@ -48,7 +48,7 @@ try {
 		echo "no image in file";
 	}
 
-	$mate = (string)$result02;
+	$mate = serialize($result02); //array to string conversion??
 
 	if (strpos($mate, "summary")) {
 		echo "there is some summary here \r\n";
