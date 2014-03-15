@@ -40,6 +40,14 @@ try {
 
 	print_r($result02);
 
+	$subject = $result02;
+	$pattern = '\bimg\b\i';
+	if (preg_match($pattern, $subject)) {
+		echo "img was found";
+	} else {
+		echo "no image in file";
+	}
+
 	$mate = (string)$result02;
 
 	if (strpos($mate, "summary")) {
