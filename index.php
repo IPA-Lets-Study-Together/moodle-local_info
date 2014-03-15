@@ -41,7 +41,7 @@ try {
 	print_r($result02);
 
 	$subject = serialize($result02); //array to string conversion??
-	$pattern = '\bimg\b\i';
+	$pattern = '/\bimg\b/i';
 	if (preg_match($pattern, $subject)) {
 		echo "img was found";
 	} else {
