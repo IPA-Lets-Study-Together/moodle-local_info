@@ -41,12 +41,16 @@ try {
 	print_r($result02);
 
 	$subject = serialize($result02); //array to string conversion??
-	$pattern = '/\bimg\b/i';
-	if (preg_match($pattern, $subject)) {
-		echo "img was found";
-	} else {
-		echo "no image in file";
-	}
+	$pattern = '/<img(.*)\/>/';
+
+	preg_match_all($pattern, $subject, $preg_array);
+
+	print_r($preg_array);
+	// if (preg_match($pattern, $subject)) {
+	// 	echo "img was found";
+	// } else {
+	// 	echo "no image in file";
+	// }
 
 	$mate = serialize($result02); //array to string conversion??
 
