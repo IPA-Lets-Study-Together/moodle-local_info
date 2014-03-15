@@ -52,11 +52,16 @@ try {
 	// 	echo "no image in file";
 	// }
 
-	if (in_array('alt="', $preg_array)) {
+	$preg_array_indices = count($preg_array);
+
+	echo $preg_array_indices;
+
+	while (in_array('alt="', $preg_array)) {
+		$cnt++;
 	 	echo "there are some image alts";
-	 } else {
-	 	echo "no image alts";
-	 }
+	}
+
+	echo $cnt;
 
 } catch(Exception $e) {
 	echo "fail";
