@@ -43,7 +43,7 @@ try {
 	$subject = serialize($result02); //array to string conversion??
 	$pattern = '/<img(.*)\/>/';
 
-	preg_match_all($pattern, $subject, $preg_array);
+	preg_match_all($pattern, $subject, $preg_array); //getting preg_match_all
 
 	print_r($preg_array);
 	// if (preg_match($pattern, $subject)) {
@@ -52,11 +52,11 @@ try {
 	// 	echo "no image in file";
 	// }
 
-	$mate = serialize($result02); //array to string conversion??
-
-	if (strpos($mate, "summary")) {
-		echo "there is some summary here \r\n";
-	}
+	if (in_array('alt="', $preg_array)) {
+	 	echo "there are some image alts";
+	 } else {
+	 	echo "no image alts";
+	 }
 
 } catch(Exception $e) {
 	echo "fail";
